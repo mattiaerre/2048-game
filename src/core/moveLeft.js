@@ -1,8 +1,5 @@
 import oneElement from './oneElement';
-
-function allDifferent(row) {
-  return row[3] !== row[2] && row[2] !== row[1] && row[1] !== row[0];
-}
+import fourElements from './fourElements';
 
 function allNull(row) {
   return row.every((current) => current === null);
@@ -340,106 +337,58 @@ function moveLeft(row) {
       copy[3] = null;
       return copy;
     }
-  }
-
-  // 4 elements
-  if (notNull(row)) {
-    if (allDifferent(row)) {
-      return copy;
-    }
-    // [X, Y, Y, Y]
+    // [null, X, X, X]
     if (
       copy[3] !== null &&
       copy[2] !== null &&
       copy[1] !== null &&
-      copy[0] !== null &&
+      copy[0] === null &&
       copy[3] === copy[2] &&
-      copy[2] === copy[1] &&
-      copy[1] !== copy[0]
+      copy[2] === copy[1]
     ) {
-      copy[1] = copy[1] + copy[2];
-      copy[2] = copy[3];
+      copy[0] = copy[1] + copy[2];
+      copy[1] = copy[3];
+      copy[2] = null;
       copy[3] = null;
       return copy;
     }
-    // [X, Y, Z, Z]
+    // [null, X, Y, Y]
     if (
       copy[3] !== null &&
       copy[2] !== null &&
       copy[1] !== null &&
-      copy[0] !== null &&
+      copy[0] === null &&
       copy[3] === copy[2] &&
-      copy[2] !== copy[1] &&
-      copy[1] !== copy[0]
+      copy[2] !== copy[1]
     ) {
-      copy[2] = copy[2] + copy[3];
-      copy[3] = null;
-      return copy;
-    }
-    // [X, Y, Y, Z]
-    if (
-      copy[3] !== null &&
-      copy[2] !== null &&
-      copy[1] !== null &&
-      copy[0] !== null &&
-      copy[3] !== copy[2] &&
-      copy[2] === copy[1] &&
-      copy[1] !== copy[0]
-    ) {
-      copy[1] = copy[1] + copy[1];
-      copy[2] = copy[3];
-      copy[3] = null;
-      return copy;
-    }
-    // [X, X, Y, Y]
-    if (
-      copy[3] !== null &&
-      copy[2] !== null &&
-      copy[1] !== null &&
-      copy[0] !== null &&
-      copy[3] === copy[2] &&
-      copy[2] !== copy[1] &&
-      copy[1] === copy[0]
-    ) {
-      copy[0] = copy[0] + copy[1];
+      copy[0] = copy[1];
       copy[1] = copy[2] + copy[3];
       copy[2] = null;
       copy[3] = null;
       return copy;
     }
-    // [X, X, Y, Z]
+    // [2, 2, null, 2]
     if (
       copy[3] !== null &&
-      copy[2] !== null &&
+      copy[2] === null &&
       copy[1] !== null &&
       copy[0] !== null &&
-      copy[3] !== copy[2] &&
-      copy[2] !== copy[1] &&
+      copy[3] === copy[1] &&
       copy[1] === copy[0]
     ) {
       copy[0] = copy[0] + copy[1];
-      copy[1] = copy[2];
-      copy[2] = copy[3];
-      copy[3] = null;
-      return copy;
-    }
-    // [X, X, X, Y]
-    if (
-      copy[3] !== null &&
-      copy[2] !== null &&
-      copy[1] !== null &&
-      copy[0] !== null &&
-      copy[3] !== copy[2] &&
-      copy[2] === copy[1] &&
-      copy[1] === copy[0]
-    ) {
-      copy[0] = copy[0] + copy[1];
-      copy[1] = copy[2];
-      copy[2] = copy[3];
+      copy[1] = copy[3];
+      copy[2] = null;
       copy[3] = null;
       return copy;
     }
   }
+
+  // 4 elements
+  if (notNull(row)) {
+    return fourElements(copy);
+  }
+
   throw new Error(copy);
 }
 
