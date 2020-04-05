@@ -48,6 +48,78 @@ const scenarios = [
   {
     expected: [2, 8, 2, null],
     row: [2, 8, null, 2]
+  },
+  {
+    expected: [8, 2, null, null],
+    row: [4, 4, 2, null]
+  },
+  {
+    expected: [4, null, null, null],
+    row: [2, null, 2, null]
+  },
+  {
+    expected: [4, 2, null, null],
+    row: [4, null, null, 2]
+  },
+  {
+    expected: [4, 2, null, null],
+    row: [2, 2, 2, null]
+  },
+  {
+    expected: [8, 4, 2, null],
+    row: [8, 4, 2, null]
+  },
+  {
+    expected: [4, 2, null, null],
+    row: [4, null, 2, null]
+  },
+  {
+    expected: [8, 4, 2, null],
+    row: [8, 2, 2, 2]
+  },
+  {
+    expected: [8, 4, 4, null],
+    row: [8, 4, 2, 2]
+  },
+  {
+    expected: [8, 2, null, null],
+    row: [4, 4, null, 2]
+  },
+  {
+    expected: [16, 8, 2, null],
+    row: [16, 4, 4, 2]
+  },
+  {
+    expected: [32, 4, null, null],
+    row: [16, 16, 2, 2]
+  },
+  {
+    expected: [4, null, null, null],
+    row: [null, 2, 2, null]
+  },
+  {
+    expected: [64, 4, 2, null],
+    row: [32, 32, 4, 2]
+  },
+  {
+    expected: [2, 4, null, null],
+    row: [null, null, 2, 4]
+  },
+  {
+    expected: [4, null, null, null],
+    row: [null, 2, null, 2]
+  },
+  {
+    expected: [4, 8, 16, null],
+    row: [null, 4, 8, 16]
+  },
+  {
+    expected: [4, null, null, null],
+    row: [null, null, 2, 2]
+  },
+  {
+    expected: [8, 4, 2, null],
+    row: [4, 4, 4, 2]
   }
 ];
 

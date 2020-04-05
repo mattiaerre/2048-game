@@ -134,6 +134,97 @@ function moveLeft(row) {
     ) {
       return copy;
     }
+    // [X, null, X, null]
+    if (
+      copy[3] === null &&
+      copy[2] !== null &&
+      copy[1] === null &&
+      copy[0] !== null &&
+      copy[2] === copy[0]
+    ) {
+      copy[0] = copy[0] + copy[2];
+      copy[2] = null;
+      return copy;
+    }
+    // [X, null, null, Y]
+    if (
+      copy[3] !== null &&
+      copy[2] === null &&
+      copy[1] === null &&
+      copy[0] !== null &&
+      copy[0] !== copy[3]
+    ) {
+      copy[1] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [X, null, Y, null]
+    if (
+      copy[3] === null &&
+      copy[2] !== null &&
+      copy[1] === null &&
+      copy[0] !== null &&
+      copy[0] !== copy[2]
+    ) {
+      copy[1] = copy[2];
+      copy[2] = null;
+      return copy;
+    }
+    // [null, X, X, null]
+    if (
+      copy[3] === null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] === null &&
+      copy[1] === copy[2]
+    ) {
+      copy[0] = copy[1] + copy[2];
+      copy[1] = null;
+      copy[2] = null;
+      return copy;
+    }
+    // [null, null, X, Y]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] === null &&
+      copy[0] === null &&
+      copy[3] !== copy[2]
+    ) {
+      copy[0] = copy[2];
+      copy[1] = copy[3];
+      copy[2] = null;
+      copy[3] = null;
+      return copy;
+    }
+    // [null, X, null, X]
+    if (
+      copy[3] !== null &&
+      copy[2] === null &&
+      copy[1] !== null &&
+      copy[0] === null &&
+      copy[3] === copy[1]
+    ) {
+      copy[0] = copy[3] + copy[1];
+      copy[1] = null;
+      copy[2] = null;
+      copy[3] = null;
+      return copy;
+    }
+    // [null, null, X, X]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] === null &&
+      copy[0] === null &&
+      copy[3] === copy[2]
+    ) {
+      copy[0] = copy[3] + copy[2];
+      copy[1] = null;
+      copy[2] = null;
+      copy[3] = null;
+      return copy;
+    }
   }
 
   // 3 elements
@@ -176,11 +267,171 @@ function moveLeft(row) {
       copy[3] = null;
       return copy;
     }
+    // [X, X, Y, null]
+    if (
+      copy[3] === null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[2] !== copy[1] &&
+      copy[1] === copy[0]
+    ) {
+      copy[0] = copy[0] + copy[1];
+      copy[1] = copy[2];
+      copy[2] = null;
+      return copy;
+    }
+    // [X, X, X, null]
+    if (
+      copy[3] === null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[2] === copy[1] &&
+      copy[1] === copy[0]
+    ) {
+      copy[0] = copy[0] + copy[1];
+      copy[1] = copy[2];
+      copy[2] = null;
+      return copy;
+    }
+    // [X, Y, Z, null]
+    if (
+      copy[3] === null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[2] !== copy[1] &&
+      copy[1] !== copy[0]
+    ) {
+      return copy;
+    }
+    // [X, X, null, Y]
+    if (
+      copy[3] !== null &&
+      copy[2] === null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[3] !== copy[1] &&
+      copy[1] === copy[0]
+    ) {
+      copy[0] = copy[0] + copy[1];
+      copy[1] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [null, X, Y, Z]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] === null &&
+      copy[3] !== copy[2] &&
+      copy[2] !== copy[1]
+    ) {
+      copy[0] = copy[1];
+      copy[1] = copy[2];
+      copy[2] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
   }
 
   // 4 elements
   if (notNull(row)) {
     if (allDifferent(row)) {
+      return copy;
+    }
+    // [X, Y, Y, Y]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[3] === copy[2] &&
+      copy[2] === copy[1] &&
+      copy[1] !== copy[0]
+    ) {
+      copy[1] = copy[1] + copy[2];
+      copy[2] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [X, Y, Z, Z]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[3] === copy[2] &&
+      copy[2] !== copy[1] &&
+      copy[1] !== copy[0]
+    ) {
+      copy[2] = copy[2] + copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [X, Y, Y, Z]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[3] !== copy[2] &&
+      copy[2] === copy[1] &&
+      copy[1] !== copy[0]
+    ) {
+      copy[1] = copy[1] + copy[1];
+      copy[2] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [X, X, Y, Y]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[3] === copy[2] &&
+      copy[2] !== copy[1] &&
+      copy[1] === copy[0]
+    ) {
+      copy[0] = copy[0] + copy[1];
+      copy[1] = copy[2] + copy[3];
+      copy[2] = null;
+      copy[3] = null;
+      return copy;
+    }
+    // [X, X, Y, Z]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[3] !== copy[2] &&
+      copy[2] !== copy[1] &&
+      copy[1] === copy[0]
+    ) {
+      copy[0] = copy[0] + copy[1];
+      copy[1] = copy[2];
+      copy[2] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [X, X, X, Y]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] !== null &&
+      copy[3] !== copy[2] &&
+      copy[2] === copy[1] &&
+      copy[1] === copy[0]
+    ) {
+      copy[0] = copy[0] + copy[1];
+      copy[1] = copy[2];
+      copy[2] = copy[3];
+      copy[3] = null;
       return copy;
     }
   }
