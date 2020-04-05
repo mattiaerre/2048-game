@@ -49,7 +49,7 @@
   font-size: 48px !important;
 }
 
-.title256 {
+.tile256 {
   background: #edcc61;
   color: #f9f6f2;
   font-size: 48px !important;
@@ -62,9 +62,13 @@
 }
 
 .tile1024 {
-  /* TODO */
+  background: #edc53f;
+  color: #f9f6f2;
+  font-size: 32px !important;
 }
 
 .tile2048 {
-  /* TODO */
+  background: #edc22e;
+  color: #f9f6f2;
+  font-size: 32px !important;
 }
