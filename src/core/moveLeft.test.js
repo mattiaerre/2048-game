@@ -120,6 +120,18 @@ const scenarios = [
   {
     expected: [8, 4, 2, null],
     row: [4, 4, 4, 2]
+  },
+  {
+    expected: [4, 2, 4, null],
+    row: [4, null, 2, 4]
+  },
+  {
+    expected: [16, 2, 4, null],
+    row: [16, null, 2, 4]
+  },
+  {
+    expected: [4, 8, null, null],
+    row: [null, 2, 2, 8]
   }
 ];
 

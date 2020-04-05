@@ -1,3 +1,5 @@
+import oneElement from './oneElement';
+
 function allDifferent(row) {
   return row[3] !== row[2] && row[2] !== row[1] && row[1] !== row[0];
 }
@@ -40,48 +42,7 @@ function moveLeft(row) {
 
   // one element
   if (null3(row)) {
-    // [null, null, null, X]
-    if (
-      copy[3] !== null &&
-      copy[2] === null &&
-      copy[1] === null &&
-      copy[0] === null
-    ) {
-      copy[0] = copy[3];
-      copy[3] = null;
-      return copy;
-    }
-    // [null, null, X, null]
-    if (
-      copy[3] === null &&
-      copy[2] !== null &&
-      copy[1] === null &&
-      copy[0] === null
-    ) {
-      copy[0] = copy[2];
-      copy[2] = null;
-      return copy;
-    }
-    // [null, X, null, null]
-    if (
-      copy[3] === null &&
-      copy[2] === null &&
-      copy[1] !== null &&
-      copy[0] === null
-    ) {
-      copy[0] = copy[1];
-      copy[1] = null;
-      return copy;
-    }
-    // [X, null, null, null]
-    if (
-      copy[3] === null &&
-      copy[2] === null &&
-      copy[1] === null &&
-      copy[0] !== null
-    ) {
-      return copy;
-    }
+    return oneElement(copy);
   }
 
   // 2 elements
@@ -332,6 +293,50 @@ function moveLeft(row) {
       copy[0] = copy[1];
       copy[1] = copy[2];
       copy[2] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [X, null, Y, X]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] === null &&
+      copy[0] !== null &&
+      copy[3] !== copy[2] &&
+      copy[3] === copy[0] &&
+      copy[2] !== copy[0]
+    ) {
+      copy[1] = copy[2];
+      copy[2] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [X, null, Y, Z]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] === null &&
+      copy[0] !== null &&
+      copy[3] !== copy[2] &&
+      copy[2] !== copy[0]
+    ) {
+      copy[1] = copy[2];
+      copy[2] = copy[3];
+      copy[3] = null;
+      return copy;
+    }
+    // [null, X, X, Y]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] === null &&
+      copy[3] !== copy[2] &&
+      copy[2] === copy[1]
+    ) {
+      copy[0] = copy[1] + copy[2];
+      copy[1] = copy[3];
+      copy[2] = null;
       copy[3] = null;
       return copy;
     }
