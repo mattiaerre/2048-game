@@ -7,7 +7,7 @@ function addRandom(afterMove) {
       [...afterMove[0]],
       [...afterMove[1]],
       [...afterMove[2]],
-      [...[afterMove[3][0], afterMove[3][1], afterMove[3][2], 2]],
+      [...[afterMove[3][0], afterMove[3][1], afterMove[3][2], 2]]
     ];
   }
   if (counter === 1) {
@@ -15,7 +15,7 @@ function addRandom(afterMove) {
       [...[2, afterMove[0][1], afterMove[0][2], afterMove[0][3]]],
       [...afterMove[1]],
       [...afterMove[2]],
-      [...afterMove[3]],
+      [...afterMove[3]]
     ];
   }
   if (counter === 2) {
@@ -23,7 +23,7 @@ function addRandom(afterMove) {
       [...afterMove[0]],
       [...[afterMove[1][0], afterMove[1][1], 2, afterMove[1][3]]],
       [...afterMove[2]],
-      [...afterMove[3]],
+      [...afterMove[3]]
     ];
   }
   if (counter === 3) {
@@ -31,7 +31,7 @@ function addRandom(afterMove) {
       [...[afterMove[0][0], 2, afterMove[0][2], afterMove[0][3]]],
       [...afterMove[1]],
       [...afterMove[2]],
-      [...afterMove[3]],
+      [...afterMove[3]]
     ];
   }
   if (counter === 4) {
@@ -39,7 +39,7 @@ function addRandom(afterMove) {
       [...afterMove[0]],
       [...afterMove[1]],
       [...[2, afterMove[2][1], afterMove[2][2], afterMove[2][3]]],
-      [...afterMove[3]],
+      [...afterMove[3]]
     ];
   }
   if (counter === 5) {
@@ -47,7 +47,7 @@ function addRandom(afterMove) {
       [...afterMove[0]],
       [...afterMove[1]],
       [...afterMove[2]],
-      [...[afterMove[3][0], afterMove[3][1], afterMove[3][2], 2]],
+      [...[afterMove[3][0], afterMove[3][1], afterMove[3][2], 2]]
     ];
   }
   counter += 1;
