@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
+import addRandom from './core/addRandom';
 import getNext, { DOWN, LEFT, RIGHT, UP } from './core/getNext';
 import './App.css';
 import useKeyPress from './useKeyPress';
@@ -11,16 +12,16 @@ function App() {
 
   const initialState = [
     [null, null, null, null],
-    [null, null, 2, null],
     [null, null, null, null],
-    [null, null, null, 2]
+    [null, null, null, null],
+    [null, null, null, null]
   ];
 
   function reducer(state, action) {
     return getNext(action.type, state);
   }
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, addRandom(initialState));
 
   useEffect(() => {
     if (downPress) {
