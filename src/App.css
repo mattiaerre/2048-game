@@ -37,3 +37,34 @@
   background: #f67c5f;
   color: #f9f6f2;
 }
+
+.tile64 {
+  background: #f65e3b;
+  color: #f9f6f2;
+}
+
+.tile128 {
+  background: #edcf72;
+  color: #f9f6f2;
+  font-size: 48px !important;
+}
+
+.title256 {
+  background: #edcc61;
+  color: #f9f6f2;
+  font-size: 48px !important;
+}
+
+.tile512 {
+  background: #edc850;
+  color: #f9f6f2;
+  font-size: 48px !important;
+}
+
+.tile1024 {
+  /* TODO */
+}
+
+.tile2048 {
+  /* TODO */
+}
