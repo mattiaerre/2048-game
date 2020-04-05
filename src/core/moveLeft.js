@@ -183,6 +183,20 @@ function moveLeft(row) {
       copy[3] = null;
       return copy;
     }
+    // [null, X, Y, null]
+    if (
+      copy[3] === null &&
+      copy[2] !== null &&
+      copy[1] !== null &&
+      copy[0] === null &&
+      copy[2] !== copy[1]
+    ) {
+      copy[0] = copy[1];
+      copy[1] = copy[2];
+      copy[2] = null;
+      copy[3] = null;
+      return copy;
+    }
   }
 
   // 3 elements
@@ -264,7 +278,7 @@ function moveLeft(row) {
     ) {
       return copy;
     }
-    // [X, X, null, Y]
+    // [X, X, null, Y] || [X, X, null, X]
     if (
       copy[3] !== null &&
       copy[2] === null &&
@@ -367,7 +381,7 @@ function moveLeft(row) {
       copy[3] = null;
       return copy;
     }
-    // [2, 2, null, 2]
+    // [X, X, null, X]
     if (
       copy[3] !== null &&
       copy[2] === null &&
@@ -377,6 +391,21 @@ function moveLeft(row) {
       copy[1] === copy[0]
     ) {
       copy[0] = copy[0] + copy[1];
+      copy[1] = copy[3];
+      copy[2] = null;
+      copy[3] = null;
+      return copy;
+    }
+    // [X, null, X, Y]
+    if (
+      copy[3] !== null &&
+      copy[2] !== null &&
+      copy[1] === null &&
+      copy[0] !== null &&
+      copy[3] !== copy[2] &&
+      copy[2] === copy[0]
+    ) {
+      copy[0] = copy[0] + copy[2];
       copy[1] = copy[3];
       copy[2] = null;
       copy[3] = null;
