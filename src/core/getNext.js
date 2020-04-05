@@ -47,13 +47,8 @@ function move(arrow, current) {
 }
 
 function getNext(arrow, current) {
-  try {
-    const afterMove = move(arrow, current);
-    return addRandom(afterMove);
-  } catch (error) {
-    console.log('current:', JSON.stringify(current));
-    throw error;
-  }
+  const afterMove = move(arrow, current);
+  return addRandom(afterMove);
 }
 
 export default getNext;

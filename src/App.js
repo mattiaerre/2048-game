@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
-import addRandom from './core/addRandom';
-import getNext, { DOWN, LEFT, RIGHT, UP } from './core/getNext';
+import { DOWN, LEFT, RIGHT, UP } from './core/getNext';
+import initialState from './core/initialState';
+import reducer from './core/reducer';
 import './App.css';
 import useKeyPress from './useKeyPress';
 
@@ -10,18 +11,7 @@ function App() {
   const rightPress = useKeyPress(39);
   const upPress = useKeyPress(38);
 
-  const initialState = [
-    [null, null, null, null],
-    [null, null, null, null],
-    [null, null, null, null],
-    [null, null, null, null]
-  ];
-
-  function reducer(state, action) {
-    return getNext(action.type, state);
-  }
-
-  const [state, dispatch] = useReducer(reducer, addRandom(initialState));
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     if (downPress) {

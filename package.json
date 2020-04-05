@@ -35,5 +35,13 @@
     "eslint-config-prettier": "^6.10.1",
     "prettier": "^2.0.2"
   },
-  "homepage": "https://mattiaerre.github.io/2048-game"
+  "homepage": "https://mattiaerre.github.io/2048-game",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/serviceWorker.js",
+      "!src/useKeyPress.js"
+    ]
+  }
 }
