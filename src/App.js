@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
+import { version } from '../package.json';
 import { DOWN, LEFT, RIGHT, UP } from './core/getNext';
 import initialState from './core/initialState';
 import reducer from './core/reducer';
@@ -30,7 +31,7 @@ function App() {
 
   return (
     <article className="App">
-      <h1>2048</h1>
+      <h1 className="App__h1">2048</h1>
       <table className="App__table">
         <tbody>
           {state.map((row, index) => {
@@ -46,6 +47,9 @@ function App() {
           })}
         </tbody>
       </table>
+      <footer className="App__footer">
+        <small>v{version}</small>
+      </footer>
     </article>
   );
 }

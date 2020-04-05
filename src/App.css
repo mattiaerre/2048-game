@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.App__footer {
+  margin-top: 16px;
+}
+
+.App__h1 {
+  margin: 32px 0;
+}
+
 .App__table {
   margin: auto;
 }
