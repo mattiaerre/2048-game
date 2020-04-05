@@ -1,4 +1,7 @@
 import getNext, { DOWN, LEFT, RIGHT, UP } from './getNext';
+import mockAddRandom from './mockAddRandom';
+
+jest.mock('./addRandom', () => (afterMove) => mockAddRandom(afterMove));
 
 const state00 = [
   [null, null, null, null],
