@@ -13,3 +13,27 @@
   height: 100px;
   width: 100px;
 }
+
+.tile2 {
+  background: #eee4da;
+  color: #776e65;
+}
+
+.tile4 {
+  background: #ede0c8;
+  color: #776e65;
+}
+
+.tile8 {
+  background: #f2b179;
+  color: #f9f6f2;
+}
+.tile16 {
+  background: #f59563;
+  color: #f9f6f2;
+}
+
+.tile32 {
+  background: #f67c5f;
+  color: #f9f6f2;
+}

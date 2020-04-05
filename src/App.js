@@ -40,14 +40,15 @@ function App() {
   return (
     <article className="App">
       <h1>2048</h1>
-      <p>TODO</p>
       <table className="App__table">
         <tbody>
           {state.map((row, index) => {
             return (
               <tr key={index}>
                 {row.map((cell, index) => (
-                  <td key={index}>{cell}</td>
+                  <td className={`tile${cell}`} key={index}>
+                    {cell}
+                  </td>
                 ))}
               </tr>
             );
