@@ -152,6 +152,8 @@ function twoElements(copy) {
     copy[3] = null;
     return copy;
   }
+
+  throw new Error(copy);
 }
 
 export default twoElements;

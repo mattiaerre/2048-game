@@ -163,6 +163,21 @@ function threeElements(copy) {
     copy[3] = null;
     return copy;
   }
+  // [X, Y, null, Y]
+  if (
+    copy[3] !== null &&
+    copy[2] === null &&
+    copy[1] !== null &&
+    copy[0] !== null &&
+    copy[3] === copy[1]
+  ) {
+    copy[1] = copy[1] + copy[3];
+    copy[2] = null;
+    copy[3] = null;
+    return copy;
+  }
+
+  throw new Error(copy);
 }
 
 export default threeElements;
