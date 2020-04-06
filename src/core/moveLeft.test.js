@@ -176,7 +176,7 @@ const scenarios = [
 ];
 
 scenarios.forEach(({ expected, row }) => {
-  it(`${row} => ${expected}`, () => {
+  test(`${row} => ${expected}`, () => {
     expect(moveLeft(row)).toEqual(expected);
   });
 });

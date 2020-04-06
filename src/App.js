@@ -1,8 +1,8 @@
 import React, { useEffect, useReducer } from 'react';
 import { version } from '../package.json';
 import { DOWN, LEFT, RIGHT, UP } from './core/getNext';
-import initialState from './core/initialState';
-import reducer from './core/reducer';
+import initialState from './store/initialState';
+import reducer from './store/reducer';
 import './App.css';
 import useKeyPress from './useKeyPress';
 

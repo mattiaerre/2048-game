@@ -53,16 +53,16 @@ const state06 = [
 ];
 
 const scenarios = [
-  { arrow: LEFT, current: state00, next: state01 },
-  { arrow: LEFT, current: state01, next: state02 },
-  { arrow: DOWN, current: state02, next: state03 },
-  { arrow: DOWN, current: state03, next: state04 },
-  { arrow: RIGHT, current: state04, next: state05 },
-  { arrow: UP, current: state05, next: state06 }
+  { current: state00, key: LEFT, next: state01 },
+  { current: state01, key: LEFT, next: state02 },
+  { current: state02, key: DOWN, next: state03 },
+  { current: state03, key: DOWN, next: state04 },
+  { current: state04, key: RIGHT, next: state05 },
+  { current: state05, key: UP, next: state06 }
 ];
 
-scenarios.forEach(({ arrow, current, next }) => {
-  test(`key ${arrow}`, () => {
-    expect(getNext(arrow, current)).toEqual(next);
+scenarios.forEach(({ current, key, next }) => {
+  test(`key ${key}`, () => {
+    expect(getNext(current, key)).toEqual(next);
   });
 });

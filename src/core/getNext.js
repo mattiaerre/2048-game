@@ -31,23 +31,23 @@ function rotateRight(matrix) {
   ];
 }
 
-function move(arrow, current) {
-  if (arrow === DOWN) {
+function move(current, key) {
+  if (key === DOWN) {
     return rotateLeft(reduce(rotateRight(current)));
   }
-  if (arrow === LEFT) {
+  if (key === LEFT) {
     return reduce(current);
   }
-  if (arrow === RIGHT) {
+  if (key === RIGHT) {
     return rotateLeft(rotateLeft(reduce(rotateRight(rotateRight(current)))));
   }
-  if (arrow === UP) {
+  if (key === UP) {
     return rotateRight(reduce(rotateLeft(current)));
   }
 }
 
-function getNext(arrow, current) {
-  const afterMove = move(arrow, current);
+function getNext(current, key) {
+  const afterMove = move(current, key);
   return addRandom(afterMove);
 }
 

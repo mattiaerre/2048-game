@@ -33,6 +33,7 @@ function null3(row) {
 
 function moveLeft(row) {
   const copy = [...row];
+
   if (allNull(row)) {
     return copy;
   }
