@@ -31,7 +31,15 @@ function App() {
 
   return (
     <article className="App">
-      <h1 className="App__h1">2048</h1>
+      <h1 className="App__h1">
+        <a
+          href="https://2048game.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          2048
+        </a>
+      </h1>
       <table className="App__table">
         <tbody>
           {state.map((row, index) => {
@@ -47,6 +55,10 @@ function App() {
           })}
         </tbody>
       </table>
+      <p className="App__p">
+        How to play: use your arrow keys to move the tiles. When two tiles with
+        the same number touch, they merge into one.
+      </p>
       <footer className="App__footer">
         <small>v{version}</small>
       </footer>
