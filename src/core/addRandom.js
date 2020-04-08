@@ -2,35 +2,35 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function addRandom(afterMove) {
+function addRandom(grid) {
+  const copy = JSON.parse(JSON.stringify(grid)); // deep copy
   if (
-    afterMove[0][0] !== null &&
-    afterMove[0][1] !== null &&
-    afterMove[0][2] !== null &&
-    afterMove[0][3] !== null &&
-    afterMove[1][0] !== null &&
-    afterMove[1][1] !== null &&
-    afterMove[1][2] !== null &&
-    afterMove[1][3] !== null &&
-    afterMove[2][0] !== null &&
-    afterMove[2][1] !== null &&
-    afterMove[2][2] !== null &&
-    afterMove[2][3] !== null &&
-    afterMove[3][0] !== null &&
-    afterMove[3][1] !== null &&
-    afterMove[3][2] !== null &&
-    afterMove[3][3] !== null
+    copy[0][0] !== null &&
+    copy[0][1] !== null &&
+    copy[0][2] !== null &&
+    copy[0][3] !== null &&
+    copy[1][0] !== null &&
+    copy[1][1] !== null &&
+    copy[1][2] !== null &&
+    copy[1][3] !== null &&
+    copy[2][0] !== null &&
+    copy[2][1] !== null &&
+    copy[2][2] !== null &&
+    copy[2][3] !== null &&
+    copy[3][0] !== null &&
+    copy[3][1] !== null &&
+    copy[3][2] !== null &&
+    copy[3][3] !== null
   ) {
-    return afterMove;
+    return copy;
   }
   const x = getRandomInt(4);
   const y = getRandomInt(4);
-  if (afterMove[x][y] === null) {
-    const copy = [...afterMove];
+  if (copy[x][y] === null) {
     copy[x][y] = 2;
     return copy;
   } else {
-    return addRandom(afterMove);
+    return addRandom(copy);
   }
 }
 

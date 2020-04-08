@@ -1,6 +1,6 @@
-import { DOWN, LEFT, NEW_GAME, RIGHT, UP } from '../core/constants';
+import { DOWN, emptyState, LEFT, NEW_GAME, RIGHT, UP } from '../core/constants';
+import addRandom from '../core/addRandom';
 import getNext from '../core/getNext';
-import initialState from './initialState';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -10,7 +10,7 @@ function reducer(state, action) {
     case UP:
       return getNext(state, action.type);
     case NEW_GAME:
-      return initialState;
+      return addRandom(emptyState);
     default:
   }
 }

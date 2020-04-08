@@ -34,7 +34,7 @@ function null3(row) {
 }
 
 function moveLeft(row) {
-  const copy = [...row];
+  const copy = JSON.parse(JSON.stringify(row)); // deep copy
 
   if (allNull(copy)) {
     return copy;

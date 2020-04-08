@@ -1,11 +1,5 @@
 import addRandom from '../core/addRandom';
-
-const emptyState = [
-  [null, null, null, null],
-  [null, null, null, null],
-  [null, null, null, null],
-  [null, null, null, null]
-];
+import { emptyState } from '../core/constants';
 
 const state001 = [
   [2, null, null, null],

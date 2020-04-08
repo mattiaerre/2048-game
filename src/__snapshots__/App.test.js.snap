@@ -97,7 +97,7 @@ exports[`<App /> 1`] = `
     >
       <small>
         v
-        0.1.4
+        1.0.0
       </small>
     </footer>
   </article>
