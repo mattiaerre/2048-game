@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import { version } from '../package.json';
-import { DOWN, LEFT, RIGHT, UP } from './core/getNext';
+import { DOWN, LEFT, NEW_GAME, RIGHT, UP } from './core/constants';
 import initialState from './store/initialState';
 import reducer from './store/reducer';
 import './App.css';
@@ -40,13 +40,21 @@ function App() {
           2048
         </a>
       </h1>
+      <p>
+        <button
+          className="App__button"
+          onClick={() => dispatch({ type: NEW_GAME })}
+        >
+          New game
+        </button>
+      </p>
       <table className="App__table">
         <tbody>
           {state.map((row, index) => {
             return (
               <tr key={index}>
                 {row.map((cell, index) => (
-                  <td className={`tile${cell}`} key={index}>
+                  <td className={`tile--${cell}`} key={index}>
                     {cell}
                   </td>
                 ))}

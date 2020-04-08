@@ -1,10 +1,6 @@
 import addRandom from './addRandom';
+import { DOWN, LEFT, RIGHT, UP } from './constants';
 import moveLeft from './moveLeft';
-
-export const DOWN = 'DOWN';
-export const LEFT = 'LEFT';
-export const RIGHT = 'RIGHT';
-export const UP = 'UP';
 
 function reduce(current) {
   return current.reduce((accumulator, row, index, array) => {

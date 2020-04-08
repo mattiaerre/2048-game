@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+.App__button {
+  background-color: #8f7a66;
+  border-radius: 4px;
+  border-width: 0;
+  color: #f9f6f2;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 16px;
+}
+
 .App__footer {
   margin-top: 16px;
 }
@@ -34,60 +44,60 @@
   width: 100px;
 }
 
-.tile2 {
+.tile--2 {
   background: #eee4da;
   color: #776e65;
 }
 
-.tile4 {
+.tile--4 {
   background: #ede0c8;
   color: #776e65;
 }
 
-.tile8 {
+.tile--8 {
   background: #f2b179;
   color: #f9f6f2;
 }
-.tile16 {
+.tile--16 {
   background: #f59563;
   color: #f9f6f2;
 }
 
-.tile32 {
+.tile--32 {
   background: #f67c5f;
   color: #f9f6f2;
 }
 
-.tile64 {
+.tile--64 {
   background: #f65e3b;
   color: #f9f6f2;
 }
 
-.tile128 {
+.tile--128 {
   background: #edcf72;
   color: #f9f6f2;
   font-size: 48px !important;
 }
 
-.tile256 {
+.tile--256 {
   background: #edcc61;
   color: #f9f6f2;
   font-size: 48px !important;
 }
 
-.tile512 {
+.tile--512 {
   background: #edc850;
   color: #f9f6f2;
   font-size: 48px !important;
 }
 
-.tile1024 {
+.tile--1024 {
   background: #edc53f;
   color: #f9f6f2;
   font-size: 32px !important;
 }
 
-.tile2048 {
+.tile--2048 {
   background: #edc22e;
   color: #f9f6f2;
   font-size: 32px !important;

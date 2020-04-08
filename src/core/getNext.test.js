@@ -1,4 +1,5 @@
-import getNext, { DOWN, LEFT, RIGHT, UP } from './getNext';
+import { DOWN, LEFT, RIGHT, UP } from './constants';
+import getNext from './getNext';
 import mockAddRandom from './mockAddRandom';
 
 jest.mock('./addRandom', () => (afterMove) => mockAddRandom(afterMove));

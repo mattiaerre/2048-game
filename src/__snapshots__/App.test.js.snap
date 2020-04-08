@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> 1`] = `
+<div>
+  <article
+    class="App"
+  >
+    <h1
+      class="App__h1"
+    >
+      <a
+        href="https://2048game.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        2048
+      </a>
+    </h1>
+    <p>
+      <button
+        class="App__button"
+      >
+        New game
+      </button>
+    </p>
+    <table
+      class="App__table"
+    >
+      <tbody>
+        <tr>
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+        </tr>
+        <tr>
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+        </tr>
+        <tr>
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+        </tr>
+        <tr>
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--null"
+          />
+          <td
+            class="tile--2"
+          >
+            2
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p
+      class="App__p"
+    >
+      How to play: use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one.
+    </p>
+    <footer
+      class="App__footer"
+    >
+      <small>
+        v
+        0.1.4
+      </small>
+    </footer>
+  </article>
+</div>
+`;
