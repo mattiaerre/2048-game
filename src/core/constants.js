@@ -4,7 +4,7 @@ export const NEW_GAME = 'NEW_GAME';
 export const RIGHT = 'RIGHT';
 export const UP = 'UP';
 
-export const emptyState = [
+export const emptyGrid = [
   [null, null, null, null],
   [null, null, null, null],
   [null, null, null, null],

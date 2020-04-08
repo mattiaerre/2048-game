@@ -12,7 +12,7 @@ function App() {
   const rightPress = useKeyPress(39);
   const upPress = useKeyPress(38);
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [{ grid }, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     if (downPress) {
@@ -50,7 +50,7 @@ function App() {
       </p>
       <table className="App__table">
         <tbody>
-          {state.map((row, index) => {
+          {grid.map((row, index) => {
             return (
               <tr key={index}>
                 {row.map((cell, index) => (

@@ -1,4 +1,4 @@
-import { DOWN, emptyState, LEFT, NEW_GAME, RIGHT, UP } from '../core/constants';
+import { DOWN, emptyGrid, LEFT, NEW_GAME, RIGHT, UP } from '../core/constants';
 import addRandom from '../core/addRandom';
 import getNext from '../core/getNext';
 
@@ -8,9 +8,9 @@ function reducer(state, action) {
     case LEFT:
     case RIGHT:
     case UP:
-      return getNext(state, action.type);
+      return { grid: getNext(state.grid, action.type) };
     case NEW_GAME:
-      return addRandom(emptyState);
+      return { grid: addRandom(emptyGrid) };
     default:
   }
 }
