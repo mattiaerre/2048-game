@@ -15,6 +15,6 @@ const grid002 = [
   [2, 4, 8, 4]
 ];
 
-const initialState = { grid: addRandom(emptyGrid) };
+const initialState = { grid: addRandom(emptyGrid), score: 0 };
 
 export default initialState;

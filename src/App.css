@@ -2,13 +2,37 @@
   text-align: center;
 }
 
+.App__Score {
+  background-color: #bbada0;
+  border-radius: 4px;
+  color: #fff;
+  padding: 8px 16px;
+}
+
+.App__Score h1,
+p {
+  margin: 0;
+}
+
+.App__Score h1 {
+  color: #eee4da;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.App__Score p {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
 .App__button {
   background-color: #8f7a66;
   border-radius: 4px;
   border-width: 0;
   color: #f9f6f2;
-  font-weight: bold;
   font-size: 16px;
+  font-weight: bold;
   padding: 8px 16px;
 }
 
@@ -34,6 +58,7 @@
 
 .App__table {
   margin: auto;
+  margin-top: 16px;
 }
 
 .App__table tbody tr td {
@@ -42,6 +67,16 @@
   font-size: 64px;
   height: 100px;
   width: 100px;
+}
+
+.App__ul {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.App__ul li {
+  margin: 0 16px;
 }
 
 .tile--2 {

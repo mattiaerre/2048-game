@@ -12,7 +12,7 @@ function App() {
   const rightPress = useKeyPress(39);
   const upPress = useKeyPress(38);
 
-  const [{ grid }, dispatch] = useReducer(reducer, initialState);
+  const [{ grid, score }, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     if (downPress) {
@@ -40,14 +40,22 @@ function App() {
           2048
         </a>
       </h1>
-      <p>
-        <button
-          className="App__button"
-          onClick={() => dispatch({ type: NEW_GAME })}
-        >
-          New game
-        </button>
-      </p>
+      <ul className="App__ul">
+        <li>
+          <div className="App__Score">
+            <h1>Score</h1>
+            <p>{score}</p>
+          </div>
+        </li>
+        <li>
+          <button
+            className="App__button"
+            onClick={() => dispatch({ type: NEW_GAME })}
+          >
+            New game
+          </button>
+        </li>
+      </ul>
       <table className="App__table">
         <tbody>
           {grid.map((row, index) => {

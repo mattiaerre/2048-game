@@ -8,9 +8,9 @@ function reducer(state, action) {
     case LEFT:
     case RIGHT:
     case UP:
-      return { grid: getNext(state.grid, action.type) };
+      return { ...state, grid: getNext(state.grid, action.type) };
     case NEW_GAME:
-      return { grid: addRandom(emptyGrid) };
+      return { ...state, grid: addRandom(emptyGrid) };
     default:
   }
 }
