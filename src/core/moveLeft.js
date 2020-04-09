@@ -4,11 +4,11 @@ import threeElements from './threeElements';
 import twoElements from './twoElements';
 
 function allNull(row) {
-  return row.every((current) => current === null);
+  return row.every((element) => element === null);
 }
 
 function notNull(row) {
-  return row.every((current) => current !== null);
+  return row.every((element) => element !== null);
 }
 
 function nullCount(count) {

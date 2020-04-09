@@ -16,13 +16,29 @@ exports[`<App /> 1`] = `
         2048
       </a>
     </h1>
-    <p>
-      <button
-        class="App__button"
-      >
-        New game
-      </button>
-    </p>
+    <ul
+      class="App__ul"
+    >
+      <li>
+        <div
+          class="App__Score"
+        >
+          <h1>
+            Score
+          </h1>
+          <p>
+            0
+          </p>
+        </div>
+      </li>
+      <li>
+        <button
+          class="App__button"
+        >
+          New game
+        </button>
+      </li>
+    </ul>
     <table
       class="App__table"
     >

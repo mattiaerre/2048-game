@@ -1,6 +1,6 @@
 import { DOWN, emptyGrid, LEFT, NEW_GAME, RIGHT, UP } from '../core/constants';
-import addRandom from '../core/addRandom';
 import getNext from '../core/getNext';
+import addRandom from './addRandom';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -8,7 +8,7 @@ function reducer(state, action) {
     case LEFT:
     case RIGHT:
     case UP:
-      return { ...state, grid: getNext(state.grid, action.type) };
+      return { ...state, grid: addRandom(getNext(state.grid, action.type)) };
     case NEW_GAME:
       return { ...state, grid: addRandom(emptyGrid) };
     default:

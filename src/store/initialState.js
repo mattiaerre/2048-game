@@ -1,5 +1,5 @@
-import addRandom from '../core/addRandom';
 import { emptyGrid } from '../core/constants';
+import addRandom from './addRandom';
 
 const grid001 = [
   [2, null, null, null],

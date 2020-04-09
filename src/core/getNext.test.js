@@ -1,69 +1,50 @@
 import { DOWN, LEFT, RIGHT, UP } from './constants';
 import getNext from './getNext';
-import mockAddRandom from './mockAddRandom';
 
-jest.mock('./addRandom', () => (afterMove) => mockAddRandom(afterMove));
-
-const state00 = [
+const grid00 = [
   [null, null, null, null],
   [null, null, 2, null],
   [null, null, null, null],
   [null, null, null, 2]
 ];
 
-const state01 = [
+const grid01 = [
   [null, null, null, null],
   [2, null, null, null],
   [null, null, null, null],
-  [2, null, null, 2] // random
+  [2, null, null, null]
 ];
 
-const state02 = [
-  [2, null, null, null], // random
-  [2, null, null, null],
+const grid02 = [
+  [null, null, null, null],
+  [null, null, null, null],
   [null, null, null, null],
   [4, null, null, null]
 ];
 
-const state03 = [
+const grid03 = [
   [null, null, null, null],
-  [null, null, 2, null], // random
-  [4, null, null, null],
-  [4, null, null, null]
+  [null, null, null, null],
+  [null, null, null, null],
+  [null, null, null, 4]
 ];
 
-const state04 = [
-  [null, 2, null, null], // random
+const grid04 = [
+  [null, null, null, 4],
   [null, null, null, null],
   [null, null, null, null],
-  [8, null, 2, null]
-];
-
-const state05 = [
-  [null, null, null, 2],
-  [null, null, null, null],
-  [2, null, null, null], // random
-  [null, null, 8, 2]
-];
-
-const state06 = [
-  [2, null, 8, 4],
-  [null, null, null, null],
-  [null, null, null, null],
-  [null, null, null, 2] // random
+  [null, null, null, null]
 ];
 
 const scenarios = [
-  { current: state00, key: LEFT, next: state01 },
-  { current: state01, key: LEFT, next: state02 },
-  { current: state02, key: DOWN, next: state03 },
-  { current: state03, key: DOWN, next: state04 },
-  { current: state04, key: RIGHT, next: state05 },
-  { current: state05, key: UP, next: state06 }
+  { grid: grid00, key: LEFT, next: grid01 },
+  { grid: grid01, key: DOWN, next: grid02 },
+  { grid: grid02, key: RIGHT, next: grid03 },
+  { grid: grid03, key: UP, next: grid04 }
 ];
 
-scenarios.forEach(({ current, key, next }) => {
+scenarios.forEach(({ grid, key, next }) => {
   test(`key ${key}`, () => {
-    expect(getNext(current, key)).toEqual(next);
+    expect(getNext(grid, key)).toEqual(next);
   });
 });

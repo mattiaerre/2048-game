@@ -1,9 +1,8 @@
-import addRandom from './addRandom';
 import { DOWN, LEFT, RIGHT, UP } from './constants';
 import moveLeft from './moveLeft';
 
-function reduce(current) {
-  return current.reduce((accumulator, row, index, array) => {
+function reduce(grid) {
+  return grid.reduce((accumulator, row, index, array) => {
     accumulator[index] = moveLeft(row);
     return accumulator;
   }, []);
@@ -27,24 +26,23 @@ function rotateRight(matrix) {
   ];
 }
 
-function move(current, key) {
+function move(grid, key) {
   if (key === DOWN) {
-    return rotateLeft(reduce(rotateRight(current)));
+    return rotateLeft(reduce(rotateRight(grid)));
   }
   if (key === LEFT) {
-    return reduce(current);
+    return reduce(grid);
   }
   if (key === RIGHT) {
-    return rotateLeft(rotateLeft(reduce(rotateRight(rotateRight(current)))));
+    return rotateLeft(rotateLeft(reduce(rotateRight(rotateRight(grid)))));
   }
   if (key === UP) {
-    return rotateRight(reduce(rotateLeft(current)));
+    return rotateRight(reduce(rotateLeft(grid)));
   }
 }
 
-function getNext(current, key) {
-  const afterMove = move(current, key);
-  return addRandom(afterMove);
+function getNext(grid, key) {
+  return move(grid, key);
 }
 
 export default getNext;
